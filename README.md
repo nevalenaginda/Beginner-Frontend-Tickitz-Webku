@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Beginner Frontend Week 5
+### Informasi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+File ini merupakan contoh pembuatan frontend web tiket sederhana yang dibangun menggunakan React Js. Frontend web ini  dapat melakukan create, read, update, dan delete data dari suatu API tiket film yang dibuat pada postingan sebelumnya.
 
-## Available Scripts
+### Modules
 
-In the project directory, you can run:
+1. [Reactjs]
+2. [Axios]
+3. [Bootstrap]
+4. [React-bootstrap]
+5. [Moment]
+6. [React-router-dom]
+7. [Sweetalert2]
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[Reactjs]: https://www.npmjs.com/package/react
+[Axios]: https://www.npmjs.com/package/axios
+[Bootstrap]: https://www.npmjs.com/package/bootstrap
+[React-bootstrap]: https://www.npmjs.com/package/react-bootstrap
+[Moment]: https://www.npmjs.com/package/moment
+[React-router-dom]: https://www.npmjs.com/package/react-router-dom
+[Sweetalert2]: https://www.npmjs.com/package/sweetalert2
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tatacara Penggunaan
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Silahkan download file ini.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Silahkan buka file ini dalam satu folder di text editor  seperti VS Code atau sejenisnya
 
-### `yarn eject`
+Install module yang tertera di atas
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Silahkan buka terminal pada VS Code dengan menekan tombol
+```
+CTRL + SHIFT + `
+atau
+CTRL + SHIFT + C
+```
+Kemudian ketikan text berikut untuk menjalankan
+```
+"npm run start"
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Untuk project beginner backend tiket film dapat dilihat <a href="https://github.com/nevalenaginda/Beginner-Backend-Tickitz-WebKu/tree/master">disini</a> 

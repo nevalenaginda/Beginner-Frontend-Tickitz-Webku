@@ -1,0 +1,23 @@
+.banner {
+  background-image: url(../../../../assets/img/banner_img.png);
+  background-size: cover;
+  position: relative;
+}
+
+.bg-banner {
+  /* display: block; */
+  background-color: rgba(43, 21, 107, 0.8);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 25%;
+  z-index: 1;
+}
+
+.logo-desktop-sign-in {
+  width: 60%;
+  height: auto;
+}

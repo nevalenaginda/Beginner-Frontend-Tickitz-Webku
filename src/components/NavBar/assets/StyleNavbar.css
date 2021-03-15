@@ -1,0 +1,23 @@
+/* Navbar */
+
+.navbar-brand img {
+  width: 130px !important;
+  height: auto;
+}
+
+.navbar-position {
+  position: fixed !important;
+  width: 100%;
+  z-index: 10;
+}
+
+.button-navbar {
+  width: 120px;
+  background-color: #5f2eea !important;
+  border-color: #5f2eea !important;
+  border-radius: 4px !important;
+}
+
+.button-search {
+  border-color: white !important;
+}
