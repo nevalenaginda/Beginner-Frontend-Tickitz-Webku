@@ -8,6 +8,7 @@ import Order from "../pages/main/Order";
 import Payment from "../pages/main/Payment";
 import Profile from "../pages/main/Profile";
 import Admin from "../pages/main/Admin";
+import UpdateMovie from "../pages/main/UpdateMovie";
 
 const Router = () => {
   return (
@@ -19,8 +20,9 @@ const Router = () => {
       <Route path="/order" component={Order} />
       <Route path="/detail/:id" component={Detail} />
       <Route path="/payment" component={Payment} />
-      <Route path="/profile" component={Profile} />
-      <Route path="/admin/:id" component={Admin} />
+      <Route path="/profile/" component={Profile} />
+      <Route path="/admin" component={Admin} />
+      <Route path="/update/:id" component={UpdateMovie} />
     </Switch>
   );
 };

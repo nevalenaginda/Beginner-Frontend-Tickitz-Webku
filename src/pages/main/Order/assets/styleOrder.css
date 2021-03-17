@@ -1,0 +1,15 @@
+.order-card-payment-info{
+    weight: 100%;
+    height: auto;
+    margin: 5vw;
+    background-color: white !important;
+    
+}
+
+.font1-rs{
+    font-size: min(3.5vw, 18px);
+}
+
+.font2-rs{
+    font-size: min(4vw, 23px);
+}

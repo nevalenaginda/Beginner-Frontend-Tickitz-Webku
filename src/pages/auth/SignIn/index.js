@@ -16,8 +16,14 @@ const SignIn = () => {
     axios
       .post(REACT_APP_API_TICKET + "user/login", users)
       .then((res) => {
+        localStorage.setItem("id", res.data.data.id || null);
+        localStorage.setItem("access", res.data.data.access);
+        localStorage.setItem("token", res.data.data.token || "");
+
         alertCustom("success", res.data.message);
         history.push("/");
+
+        console.log(res.data);
       })
       .catch((err) => {
         alertCustom("error", err.response.data.message);
@@ -25,32 +31,38 @@ const SignIn = () => {
   };
   const btnGoogle = () => {
     alertCustom("info", "Google");
+    history.push("/register");
   };
   const btnFb = () => {
     alertCustom("info", "Facebook");
+    history.push("/register");
   };
   return (
-    <div className="signup">
+    <div className="signup min-vh-100">
       {/* web */}
-      <div className="web d-sm-block d-none">
+      <div className="web d-sm-block d-none ">
         <div className="container-fluid">
-          <div className="row">
+          <div className="row min-vh-100">
             {/* asside */}
-            <div className="col-sm-7 banner text-center">
-              <div className="bg-banner d-flex flex-column  align-items-center">
-                <img
-                  className="img-fluid mx-5 logo-desktop-sign-in"
-                  src={logoDesktop}
-                  alt="Logo Tickitz"
-                />
-                <h1 className="color4 f-xxl ">wait, watch, wow!</h1>
+            <div className="col-sm-7 banner">
+              <div className="bg-banner">
+                <div className="centering-asside-content">
+                  <img
+                    className="img-fluid logo-desktop-sign-in"
+                    src={logoDesktop}
+                    alt="Logo Tickitz"
+                  />
+                </div>
+                <h1 className="color4 f-xxl-responsive centering-asside-p">
+                  wait, watch, wow!
+                </h1>
               </div>
             </div>
             {/* content */}
             <div className="col-sm-5">
               <div className="container">
                 <div className="row mt-5">
-                  <div className="col-12 mt-4">
+                  <div className="col-12">
                     <h4 className="c-black f-xxl f-weight">Sign in</h4>
                     <p className="color2">
                       Sign in with your data that you entered during your
@@ -98,6 +110,12 @@ const SignIn = () => {
                         Sign In
                       </button>
                     </div>
+
+                    <div className="col-12 mt-2 ">
+                      <Link className="btn btn-success w-100" to="/register">
+                        Register
+                      </Link>
+                    </div>
                   </div>
                 </form>
                 <div className="row text-center">
@@ -112,7 +130,7 @@ const SignIn = () => {
                   <div className="col-12">
                     <p className="f-sm color2">or</p>
                   </div>
-                  <div className="col-12 mb-5">
+                  <div className="col-12">
                     <button
                       onClick={btnGoogle}
                       className="text-align-center btn btn-shadow  mr-4"
@@ -184,6 +202,11 @@ const SignIn = () => {
                 <button type="submit" className="btn btn-input w-100">
                   Sign In
                 </button>
+              </div>
+              <div className="col-12 mt-2 ">
+                <Link className="btn btn-success w-100" to="/register">
+                  Register
+                </Link>
               </div>
             </div>
           </form>

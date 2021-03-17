@@ -45,13 +45,33 @@ const SignUp = () => {
                 src={logoDesktop}
                 alt="Logo Tickitz"
               />
-              <h1 className="color4 ml-5 f-xxl text-signup-big">
+              <h1 className="color4 ml-5 f-xxl-responsive text-signup-big">
                 Lets build your account
               </h1>
               <p className="color4 ml-5 f-md text-signup-small">
                 To be a loyal moviegoer and access all of features, your details
                 are required.
               </p>
+              <div className="list-signup  d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center bg3 color1">
+                  1
+                </div>
+                <div className="span-2 ml-4 text-white">
+                  Fill your additional details
+                </div>
+              </div>
+              <div className="list-signup pt-3 d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center text-white">
+                  2
+                </div>
+                <div className=" ml-4 text-white">Activate your account</div>
+              </div>
+              <div className="list-signup pt-3 d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center text-white">
+                  3
+                </div>
+                <div className="span-2 ml-4 text-white">Done</div>
+              </div>
             </div>
             <div className="col-sm-5 mt-4">
               <div className="container">

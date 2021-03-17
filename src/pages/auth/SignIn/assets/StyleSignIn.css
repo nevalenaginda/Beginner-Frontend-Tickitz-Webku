@@ -1,3 +1,4 @@
+
 .banner {
   background-image: url(../../../../assets/img/banner_img.png);
   background-size: cover;
@@ -18,6 +19,27 @@
 }
 
 .logo-desktop-sign-in {
-  width: 60%;
+  width: 25vw;
   height: auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) 
+}
+
+.centering-asside-content{
+  /* position: relative ;  */
+  height:100vh; 
+  width:100%; 
+
+}
+.centering-asside-p{
+  font-size: 5.5vw;
+  margin: 0;
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%) 
 }

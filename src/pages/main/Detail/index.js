@@ -55,7 +55,7 @@ export class Detail extends Component {
 
     return (
       <div>
-        <CustomNavBar />
+        <CustomNavBar login={localStorage.getItem("token")} />
         <header>
           {movie.length > 0 ? (
             <div className="container mt-5">
@@ -99,18 +99,18 @@ export class Detail extends Component {
                       <h4 className="f-weight mt-4 mb-4">Synopsis</h4>
                       <p className="f-sm">{movie[0].synopsis}</p>
                     </div>
-                    <div className="col-12">
-                      <button
+                    <div className="col-12 mt-5 text-center">
+                      <Link
                         onClick={() =>
                           btnDelete(this.props.match.params.id.toString())
                         }
-                        className="btn btn-outline-dark mr-3"
+                        className="btn btn-input col-5 mr-3"
                       >
                         Delete Movie
-                      </button>
+                      </Link>
                       <Link
-                        to={`/admin/${this.props.match.params.id}`}
-                        className="btn btn-outline-dark mr-3"
+                        to={`/update/${this.props.match.params.id}`}
+                        className="btn btn-input col-5 w-30 mr-3"
                       >
                         Update
                       </Link>

@@ -7,8 +7,12 @@
   z-index: 2;
 }
 
+.f-xxl-responsive{
+  font-size: min(3.5vw, 35px);
+}
+
 .text-signup-big {
-  margin-top: 100px;
+  margin-top: 3vw;
   margin-right: 30px;
   position: relative;
   z-index: 3;
@@ -19,4 +23,18 @@
   margin-right: 30px;
   position: relative;
   z-index: 4;
+}
+
+.list-signup{
+  display: inline-block;
+  position: relative;
+  z-index: 4;
+}
+.span-list-signup{
+  border: 1.5px solid white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  z-index: 4;
+ 
 }

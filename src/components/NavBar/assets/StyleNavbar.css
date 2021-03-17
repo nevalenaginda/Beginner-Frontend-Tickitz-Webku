@@ -1,4 +1,14 @@
 /* Navbar */
+.border-color-1{
+  border: 1px solid #DEDEDE
+}
+.select-city{
+border-color: white;
+}
+.select-nav-position{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .navbar-brand img {
   width: 130px !important;
@@ -9,6 +19,13 @@
   position: fixed !important;
   width: 100%;
   z-index: 10;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-brand img {
+    width: 100px !important;
+    height: auto;
+  }
 }
 
 .button-navbar {

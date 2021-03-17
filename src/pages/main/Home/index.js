@@ -18,9 +18,38 @@ export class Home extends Component {
     };
   }
 
+  onChangeMovieName = (inputMovieName) => {
+    console.log("data di parent : ", inputMovieName);
+    const movieName = inputMovieName;
+    if (movieName) {
+      axios
+        .get(
+          `${REACT_APP_API_TICKET}/movie?search-by=movie_title&item=${movieName}`
+        )
+        .then((res) => {
+          const image = res.data.data;
+          this.setState({ image });
+        })
+        .catch((err) => {
+          console.log(err);
+          this.setState({ image: [] });
+        });
+    } else {
+      axios
+        .get(`${REACT_APP_API_TICKET}/movie`)
+        .then((res) => {
+          const image = res.data.data;
+          this.setState({ image });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
   componentDidMount() {
     axios
-      .get(REACT_APP_API_TICKET + "/movie")
+      .get(`${REACT_APP_API_TICKET}/movie`)
       .then((res) => {
         const image = res.data.data;
         this.setState({ image });
@@ -33,7 +62,10 @@ export class Home extends Component {
     const { image } = this.state;
     return (
       <>
-        <CustomNavBar />
+        <CustomNavBar
+          login={localStorage.getItem("token")}
+          onChange={(inputMovieName) => this.onChangeMovieName(inputMovieName)}
+        />
         <header>
           <div className="container mt-5">
             <div className="row align-items-center">
@@ -41,11 +73,10 @@ export class Home extends Component {
                 <p className="mt-1 mt-md-3 mt-lg-5">
                   Nearest Cinema, Newest Movie,
                 </p>
-                {/* <h1>{image.data.data[1].image}</h1> */}
+
                 <h1>Find out now!</h1>
               </div>
               <div className="col-12 col-sm-12 mt-5 mt-lg-0 col-lg-6 d-flex justify-content-center container-card">
-                {/* <CustomCardShowingMovies SrcImg={ImageBanner1} /> */}
                 <div className="card-movie">
                   <img src={ImageBanner1} className="card-img-top" alt="ok" />
                 </div>
@@ -78,27 +109,6 @@ export class Home extends Component {
                     </div>
                   </div>
                 ))}
-
-                {/* <div className="card">
-                  <div className="image-card">
-                    <img src={ImageBanner1} />
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="image-card">
-                    <img src={ImageBanner1} />
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="image-card">
-                    <img src={ImageBanner1} />
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="image-card">
-                    <img src={ImageBanner1} />
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -118,32 +128,32 @@ export class Home extends Component {
               <button href="/" className="btn btn-month main">
                 September
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 October
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 November
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 Desember
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 January
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 February
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 March
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 April
               </button>
-              <button href="#" className="btn btn-month">
+              <button href="/" className="btn btn-month">
                 May
               </button>
             </div>
-            <div className="row pl-2 pl-lg-0 overflow-auto">
+            <div className="row pl-2 pl-lg-0 overflow-auto pt-5 pb-5">
               <div className="col-12 px-0 container-upcoming-movie">
                 {image.map((item) => (
                   <div key={item.id_movie} className="card">
@@ -151,12 +161,14 @@ export class Home extends Component {
                       <img src={item.image} alt={item.image} />
                       <p
                         className="card-title mb-3"
+                        // eslint-disable-next-line
                         style={{ ["font-size"]: "13px" }}
                       >
                         {item.movie_title}
                       </p>
                       <span
                         className="card-text"
+                        // eslint-disable-next-line
                         style={{ ["font-size"]: "11px" }}
                       >
                         {item.category}
@@ -172,52 +184,6 @@ export class Home extends Component {
                 ))}
 
                 {/* Jadwal */}
-
-                {/* <div key={item.id_movie} className="card">
-                    <div className="image-card">
-                      <img src={item.image} alt={item.image} />
-                    </div>
-                  </div> */}
-                {/* <div className="card">
-                  <div className="card-upcoming-movie">
-                    <img src={ImageBanner2} />
-                    <p>The Witches</p>
-                    <span>Adventure, Comedy</span>
-                    <a href="#" className="btn btn-details">
-                      Details
-                    </a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-upcoming-movie">
-                    <img src={ImageBanner2} />
-                    <p>Tenet</p>
-                    <span>Action, Sci-Fi</span>
-                    <a href="#" className="btn btn-details">
-                      Details
-                    </a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-upcoming-movie">
-                    <img src={ImageBanner2} />
-                    <p>Black Widow</p>
-                    <span>Action, Adventure, Sci-Fi</span>
-                    <a href="#" className="btn btn-details">
-                      Details
-                    </a>
-                  </div>
-                </div>
-                <div className="card">
-                  <div className="card-upcoming-movie">
-                    <img src={ImageBanner2} />
-                    <p>The Witches</p>
-                    <span>Adventure, Comedy</span>
-                    <a href="#" className="btn btn-details">
-                      Details
-                    </a>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
@@ -231,14 +197,23 @@ export class Home extends Component {
               <p>Be the vanguard of the</p>
               <h1>Moviegoers</h1>
               <form className="form-inline join-now">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Type your email"
-                />
-                <button className="btn btn-join-now" type="submit">
-                  Join now
-                </button>
+                <div className="row">
+                  <div className="col-sm-12 col-md-7 mt-3">
+                    <input
+                      type="text"
+                      className="form-control w-100"
+                      placeholder="Type your email"
+                    />
+                  </div>
+                  <div className="col-12 col-md-5">
+                    <button
+                      className="btn mt-3 btn-join-now w-100"
+                      type="submit"
+                    >
+                      Join now
+                    </button>
+                  </div>
+                </div>
               </form>
               <p className="text-join-now">
                 By joining you as a Tickitz member,

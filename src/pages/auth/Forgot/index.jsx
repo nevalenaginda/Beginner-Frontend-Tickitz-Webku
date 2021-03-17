@@ -10,9 +10,9 @@ const Forgot = () => {
   return (
     <div className="forgot">
       {/* web */}
-      <div className="web d-sm-block d-none">
+      <div className="web d-sm-block d-none min-vh-100">
         <div className="container-fluid">
-          <div className="row row-forgot">
+          <div className="row row-forgot min-vh-100">
             <div className="col-sm-7 banner">
               <div className="bg-banner "></div>
               <img
@@ -20,13 +20,41 @@ const Forgot = () => {
                 src={logoDesktop}
                 alt="Logo Tickitz"
               />
-              <h1 className="color4 ml-5 f-xxl text-signup-big">
+              <h1 className="color4 ml-5 f-xxl-responsive text-signup-big">
                 Lets reset your password
               </h1>
               <p className="color4 ml-5 f-md text-signup-small">
                 To be able to use your account again, please complete the
                 following steps.
               </p>
+              <div className="list-signup  d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center bg3 color1">
+                  1
+                </div>
+                <div className="span-2 ml-4 text-white">
+                  Fill your complete email
+                </div>
+              </div>
+              <div className="list-signup pt-3 d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center text-white">
+                  2
+                </div>
+                <div className=" ml-4 text-white">Activate your email</div>
+              </div>
+              <div className="list-signup pt-3 d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center text-white">
+                  3
+                </div>
+                <div className="span-2 ml-4 text-white">
+                  Enter your new password
+                </div>
+              </div>
+              <div className="list-signup pt-3 mb-5 d-flex">
+                <div className="span-list-signup ml-5 rounded-div text-center text-white">
+                  4
+                </div>
+                <div className="span-2 ml-4 text-white">Done</div>
+              </div>
             </div>
             <div className="col-sm-5">
               <div className="container">
