@@ -42,7 +42,7 @@ body {
 }
 
 .color1 {
-  color: #5f2eea;
+  color: #5f2eea !important;
 }
 
 .color2 {
@@ -90,7 +90,12 @@ body {
 }
 
 .bg4 {
-  background: #f5f6f8;
+  background: #f5f6f8 !important;
+}
+
+.bg5{
+  background: #EFF0F6 !important;
+
 }
 
 .bg-fb {
@@ -102,6 +107,10 @@ body {
 }
 .line {
   text-decoration: underline;
+}
+.border1{
+  border-style: 1px solid !important; 
+  border-color: #5f2eea !important;
 }
 
 .btn-input {

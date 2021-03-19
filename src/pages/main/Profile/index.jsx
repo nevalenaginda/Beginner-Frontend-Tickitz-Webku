@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ProgressBar } from "react-bootstrap/";
 import "./assets/StyleProfile.css";
 import CustomNavBar from "../../../components/NavBar";
@@ -12,7 +12,8 @@ export default function Profile() {
   const [dataUser, setDatauser] = useState({});
   const id_user = localStorage.getItem("id");
   const { REACT_APP_API_TICKET } = process.env;
-  const getDataUser = () => {
+  // eslint-disable-next-line
+  const getDataUser = useCallback(() => {
     axios
       .get(`${REACT_APP_API_TICKET}user/${id_user}`)
       .then((response) => {
@@ -22,13 +23,13 @@ export default function Profile() {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }, [id_user]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     getDataUser();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const updateDataUser = (e) => {
-    const dataBaru = {
+    const newDataUser = {
       full_name: dataUser.first_name + " " + dataUser.last_name,
       first_name: dataUser.first_name,
       last_name: dataUser.last_name,
@@ -36,7 +37,7 @@ export default function Profile() {
       phone_number: dataUser.phone_number,
     };
     axios
-      .patch(REACT_APP_API_TICKET + "user/" + id_user, dataBaru)
+      .patch(REACT_APP_API_TICKET + "user/" + id_user, newDataUser)
       .then((res) => {
         alertCustom("success", res.data.message);
         // get ulang

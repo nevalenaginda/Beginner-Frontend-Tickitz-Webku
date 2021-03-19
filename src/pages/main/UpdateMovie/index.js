@@ -3,7 +3,7 @@ import "./assets/StyleUpdate.css";
 import axios from "axios";
 import alertCustom from "../../../components/Alerts";
 import Moment from "moment";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import CustomFooter from "../../../components/Footer";
 import CustomNavBar from "../../../components/NavBar";
@@ -17,20 +17,21 @@ function UpdateMovie() {
   const [detail, setDetail] = useState({});
   const params = useParams();
   const id_movie = params.id;
-  const getDataMovie = () => {
+  const getDataMovie = useCallback(() => {
     axios
       .get(`${REACT_APP_API_TICKET}movie/${id_movie}`)
       .then((response) => {
         setDetail(response.data.data[0]);
+        // eslint-disable-next-line
         console.log(response.data.data[0]);
       })
       .catch((error) => {
         console.log(error);
       });
-  };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     getDataMovie();
-  }, []);
+  }, [id_movie]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const submitHandler = (e) => {
     e.preventDefault();

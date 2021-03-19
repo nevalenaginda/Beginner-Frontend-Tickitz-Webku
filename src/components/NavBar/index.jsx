@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import { useLocation } from "react-router-dom";
 import "./assets/StyleNavbar.css";
 import NavBarLogo from "../../assets/img/logo_navbar.png";
 import profileImage from "./assets/img/profile.png";
-import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
+import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const handleLogout = () => {
@@ -29,6 +28,7 @@ function CustomNavBar({ login, onChange }) {
             <Form>
               <input
                 type="text"
+                // onFocus={() => history.push("/")}
                 onKeyUp={(inputMovieName) =>
                   onChange(inputMovieName.target.value)
                 }
@@ -67,13 +67,13 @@ function CustomNavBar({ login, onChange }) {
             </Link>
             <Link
               className="color2 mt-3 mt-sm-4 mt-md-2 mt-lg-2 font-weight-bold mx-2 text-center"
-              to="/"
+              to="/admin"
             >
               Cinemas
             </Link>
             <Link
               className="color2 mt-3 mt-sm-4 mt-md-2 mt-lg-2 font-weight-bold mx-2 text-center"
-              to="/"
+              to="/order"
             >
               Buy Ticket
             </Link>
@@ -153,5 +153,7 @@ function CustomNavBar({ login, onChange }) {
     </div>
   );
 }
-
+CustomNavBar.defaultProps = {
+  onChange: () => {},
+};
 export default CustomNavBar;

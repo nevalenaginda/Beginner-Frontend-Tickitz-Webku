@@ -1,5 +1,6 @@
 import React from "react";
 import alertCustom from "../../../components/Alerts";
+import { Link } from "react-router-dom";
 import logoDesktop from "../../../assets/img/logo_desktop.png";
 import "./assets/StyleForgot.css";
 
@@ -82,13 +83,14 @@ const Forgot = () => {
                     />
                   </div>
                   <div className="col-12 mt-5">
-                    <button
+                    <Link
                       onClick={() => activatenow("Hai")}
                       type="submit"
                       className="btn btn-input w-100"
+                      to="/login"
                     >
                       Activate now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -7,6 +7,7 @@ import ImageBanner1 from "./assets/img/image-1.png";
 import ImageBanner2 from "./assets/img/image-2.png";
 import ImageBanner3 from "./assets/img/image-3.png";
 import { Link } from "react-router-dom";
+import CardMovie from "../../../components/CardMovie";
 
 const { REACT_APP_API_TICKET } = process.env;
 
@@ -29,6 +30,7 @@ export class Home extends Component {
         .then((res) => {
           const image = res.data.data;
           this.setState({ image });
+          this.props.history.push(`/?search-by=movie_title&item=${movieName}`);
         })
         .catch((err) => {
           console.log(err);
@@ -40,6 +42,7 @@ export class Home extends Component {
         .then((res) => {
           const image = res.data.data;
           this.setState({ image });
+          this.props.history.push("/");
         })
         .catch((err) => {
           console.log(err);
@@ -60,6 +63,7 @@ export class Home extends Component {
   }
   render() {
     const { image } = this.state;
+    console.log(this.props);
     return (
       <>
         <CustomNavBar
@@ -103,16 +107,17 @@ export class Home extends Component {
             <div className="row mt-5 pl-2 pl-lg-0 overflow-auto">
               <div className="col-12 px-0 now-showing-movie">
                 {image.map((item) => (
-                  <div key={item.id_movie} className="card">
-                    <div className="image-card">
-                      <img src={item.image} alt={item.image} />
-                    </div>
-                  </div>
+                  <CardMovie id={item.id_movie} posterMovie={item.image} />
                 ))}
               </div>
             </div>
           </div>
         </section>
+        {/* <div key={item.id_movie} className="card">
+                    <div className="image-card">
+                      <img src={item.image} alt={item.image} />
+                    </div>
+                  </div> */}
         {/* <!-- End Showing Movie --> */}
 
         {/* <!-- Upcoming Movies --> */}
